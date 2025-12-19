@@ -12,4 +12,8 @@
   "dotenv": "^16.4.5",
   "https-proxy-agent": "^7.0.5"
   }
+  "dependencies": {
+  "undici": "^6.0.0"
+}
+
 }
