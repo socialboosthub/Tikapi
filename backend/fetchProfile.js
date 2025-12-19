@@ -1,4 +1,4 @@
-import HttpsProxyAgent from "https-proxy-agent";
+import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // 🔁 Rotate proxies
 const proxies = [
