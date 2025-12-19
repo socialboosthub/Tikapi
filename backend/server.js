@@ -1,3 +1,12 @@
+console.log("Checking Environment Variables...");
+console.log("PORT:", process.env.PORT);
+console.log("PROXIES Loaded:", process.env.PROXIES ? "YES (hidden for security)" : "NO");
+
+if (process.env.PROXIES) {
+    const firstProxy = process.env.PROXIES.split(',')[0];
+    console.log("Testing format for first proxy... Starts with:", firstProxy.substring(0, 10));
+}
+
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
