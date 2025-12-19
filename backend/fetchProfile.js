@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import HttpsProxyAgent from "https-proxy-agent";
 
 // 🔁 Rotate proxies
@@ -23,7 +22,7 @@ export async function fetchProfile(username) {
 
   try {
     const res = await fetch(url, {
-      agent,
+      dispatcher: agent,
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
@@ -37,10 +36,9 @@ export async function fetchProfile(username) {
 
     const html = await res.text();
 
-    // 🧪 TEMP: return simple confirmation
     return {
-      username,
       success: true,
+      username,
       htmlLength: html.length
     };
 
