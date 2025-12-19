@@ -1,7 +1,9 @@
+const memoryCache = new Map();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import redis from "./redis.js";
 import { fetchProfile } from "./fetchProfile.js";
 
 dotenv.config();
